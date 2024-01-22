@@ -35,8 +35,9 @@ else {
 # comparing the files in source and replica folder on base of the SideIndicator, hence
 # knowing which files are to copy or remove from either source and remove from replica, respectively 
 $FilesDiff = Compare-Object -ReferenceObject $SourceFiles -DifferenceObject $ReplicaFiles
-# if statement to check whether source and replica folders are in sync or copy/remove files not in sync
-# the sync is on way: source >> replica
+# if statement to check whether source and replica folders are in sync.
+# copy/remove files if not in sync
+# the sync is one way: source >> replica
 if ( $FilesDiff -eq $null ){
 	$TimeStamp = Get-Date
 	$LogText = "TimeStamp: " + $TimeStamp + " - Source and Replica folders are in sync"
