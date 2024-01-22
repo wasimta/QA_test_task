@@ -7,7 +7,7 @@ $LogPath = Read-Host "Enter the Log file (.txt) path"
 # Get all files from source and replica folder
 $SourceFiles = Get-ChildItem -Path $SourcePath
 $ReplicaFiles = Get-ChildItem -Path $ReplicaPath
-# if statement to check whether both folders are empty, either is empty, or both or full
+# if statement to check whether both folders are empty, either is empty, or both full
 # this is due to Compare-Object cmdlet(line:40), the command can't handle $null Object
 if ( $SourceFiles -eq $null -and $ReplicaFiles -eq $null ){
 	$TimeStamp = Get-Date
